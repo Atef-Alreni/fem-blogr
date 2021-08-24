@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass');
+@import url('https://fonts.google.com/css2?family=Ubuntu');
+
+:root {
+    /* 1. VARIABLES */
+    
+    /* 1.1 PRIMARY */
+
+    /* (CTA text) */
+    --Light-red: hsl(356, 100%, 66%);
+    /* (CTA hover background) */
+    --Very-light-red: hsl(355, 100%, 74%);
+    /* (headings) */
+    --Very-dark-blue: hsl(208, 49%, 24%);
+
+    /* 1.2 NEUTRAL */
+    
+    /* (text) */
+    --white: hsl(0, 0%, 100%);
+    /* (footer text) */
+    --Grayish-blue: hsl(0, 0%, 68%);
+    /* (body copy) */
+    --Very-dark-grayish-blue: hsl(207, 13%, 34%);
+    /* (footer background) */
+    --Very-dark-black-blue: hsl(240, 10%, 16%);
+
+    /* 1.3 GRADIENT */
+
+    /* Background gradient - Intro/CTA mobile nav: */
+    --Very-light-red-lg: hsl(13, 100%, 72%);
+    --Light-red-lg: hsl(353, 100%, 62%);
+
+    /* Background gradient - body: */
+    --Very-dark-gray-blue-lg: hsl(237, 17%, 21%);
+    --Very-dark-desaturated-blue-lg: hsl(237, 23%, 32%);
+
+    /* ## Typography
+
+    ### Body Copy
+
+    - Font size: 16px
+
+    ### Fonts
+
+    - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+    - Weights: 300, 600
+
+    - Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+    - Weights: 400, 500, 700 */
+
+    /* ##SCREEN DESKTOP WIDTH */
+    --desktop-width: 1440px;
+    --max-screen-width: 90vw;
+}
+
+/* 2. GLOBAL */
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Overpass', 'Ubuntu';
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+.contain-width {
+    width: var(--desktop-width);
+    max-width: var(--max-screen-width);
+    margin-inline: auto;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}
+
+h2, h3 {
+    color: var(--Very-dark-blue);
+}
+
+.relative {
+    position: relative;
+}
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 3. LOGO, NAV, HERO and BG SHAPES */
+
+.header {
+    padding: 2rem 0 9rem 0;
+    border-bottom-left-radius: 100px;
+}
+
+.bg-shapes {
+    background-image: url(./images/bg-pattern-intro.svg), linear-gradient(to right, var(--Very-light-red-lg), var(--Light-red-lg));
+    background-size: cover, contain;
+    background-position: 50%, 0;
+    background-repeat: no-repeat;
+}
+
+/* 3.1 LOGO and NAV */
+
+.logo-nav-login-signup  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+
+.logo-nav {
+    width: 17vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 3.1.1 LOGO */
+
+.logo-nav__logo {
+    font-size: 2em;
+    color: var(--white);
+}
+
+/* 3.1.2 NAV */
+
+/* 3.1.2.1 NAV GENERAL */
+
+.logo-nav__nav {
+    width: 50%;
+    align-self: center;
+    margin-top: .2rem;
+    margin-left: 1.8rem;
+}
+
+.logo-nav__nav-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-nav__nav-items > * > a {
+    width: 5vw;
+    font-size: .9em;
+    color: var(--white);
+    text-decoration: none;
+    background-image: url(./images/icon-arrow-light.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.logo-nav__nav-items > li + li > a {
+    margin-left: 1.8rem;
+}
+
+/* 3.1.2.2 NAV SIGNUP-LOGIN */
+
+.login-signup__nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login, .signup {
+    color: var(--white);
+    font-size: .9em;
+    margin-top: .9rem;
+}
+
+.signup {
+    font-weight: 600;
+    color: var(--Light-red);
+    background: var(--white);
+    padding: .58rem 1.9rem;
+    border-radius: 50px;
+}
+
+.login-signup__nav-items li + li {
+    margin-left: 1.3rem;
+    z-index: 200;
+}
+
+/* 3.2 HERO */
+
+.hero {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 200;
+}
+
+.hero__title, .hero__text {
+    color: var(--white);
+}
+
+.hero__title {
+    font-size: 3em;
+}
+
+.hero__text {
+    font-size: 1em;
+    font-weight: 300;
+    margin-top: 0.8rem;
+}
+
+.hero__call-to-action {
+    margin-top: 2.5rem;
+}
+
+.hero__call-to-action > a {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--Light-red);
+    background: var(--white);
+    padding: 0.8rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+.hero__call-to-action a + a {
+    font-weight: 300;
+    background: unset;
+    color: var(--white);
+    border: 1px solid var(--white);
+    margin-left: 1rem;
+}
+
+/* 4. SECTION ONE */
+
+.future-design {
+    width: var(--desktop-width);
+    max-width: var(--max-screen-width);
+    margin-inline: auto;
+    margin-top: 8rem;
+}
+
+/* 4.1 TITLE */
+
+.future-design__title {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+/* 4.2 INFO and IMAGE */
+
+.info-img {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+}
+
+/* 4.2.1 INFO */
+
+.info-img__info {
+    width: 35vw;
+    min-width: 35vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-img__info div + div {
+    margin-top: 3.8rem;
+}
+
+.info-img__info h3 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.info-img__info p {
+    font-size: .9em;
+    color: var(--Grayish-blue);
+}
+
+/* 4.2.2 IMAGE */
+
+.info-img__img {
+    width: 70vw;
+    height: 100vh;
+    right: -12vw;
+    bottom: 12.2em;
+}
+
+/* 5. SECTION TWO */
+
+.infrastructure {
+    max-height: 63vh;
+    border-radius: 0 100px 0 100px;
+    background: linear-gradient(to right, var(--Very-dark-gray-blue-lg), var(--Very-dark-desaturated-blue-lg));
+}
+
+/* 5.1 IMG and INFO */
+
+/* 5.1.1 IMG */
+
+.infrastructure__img {
+    width: 41vw;
+    height: 90vh;
+    min-width: 35em;
+    margin-top: -5rem;
+}
+
+.infrastructure__img--background {
+    width: 80vw;
+    height: 80vw;
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    visibility: hidden;
+}
+
+/* 5.1.2 INFO */
+
+.infrastructure__info {
+    flex-grow: 1;
+    align-self: center;
+    max-width: 28em;
+    margin-left: 1rem;
+    margin-top: -10rem;
+}
+
+.infrastructure__info h1 {
+    font-size: 1.9em;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.infrastructure__info p {
+    font-weight: 300;
+    font-size: .9em;
+    color: var(--Grayish-blue);
+}
+
+/* 6. SECTION THREE */
+
+.free-open {
+    margin-top: 10rem;
+}
+
+.free-open__content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* 6.1 IMG */
+
+.free-open__content__img {
+    width: 80vw;
+    height: 95vh;
+    margin-right: 1rem;
+}
+
+/* 6.2 INFO */
+
+.free-open__content__info {
+    align-self: center;
+}
+
+.free-open__content__info h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.free-open__content__info p {
+    font-size: .9em;
+    color: var(--Grayish-blue);
+}
+
+.free-open__content__info div {
+    width: 35vw;
+    max-width: 35em;
+}
+
+.free-open__content__info div + div {
+    margin-top: 2rem;
+}
+
+/* 7. FOOTER */
+
+.footer {
+    margin-top: 8rem;
+    background: var(--Very-dark-black-blue);
+    border-radius: 0 150px 0 0;
+    height: 35vh;
+}
+
+/* 7.1 ALIGNMENT */
+
+.footer-flex {
+    display: flex;
+    justify-content: flex-start;
+    padding: 3rem;
+}
+
+/* 7.3 FOOTER LOGO */
+
+.logo {
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* 7.2 FOOTER LINKS */
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60vw;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.footer-links h5 {
+    color: var(--white);
+    margin-bottom: .5rem;
+}
+
+.footer-links a {
+    font-size: .8em;
+    text-decoration: none;
+    color: var(--Grayish-blue);
+    margin-bottom: .2rem;
+}
